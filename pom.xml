@@ -17,6 +17,7 @@
     </properties>
 
     <modules>
+        <module>configuration</module>
         <module>payments</module>
         <module>payments-api</module>
     </modules>
