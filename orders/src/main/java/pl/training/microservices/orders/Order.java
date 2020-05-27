@@ -8,6 +8,6 @@ import java.util.List;
 public class Order {
 
     private Long id;
-    private List<ProductTo> products;
+    private List<Product> products;
 
 }

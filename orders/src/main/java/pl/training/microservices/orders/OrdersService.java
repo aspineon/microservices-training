@@ -32,10 +32,14 @@ public class OrdersService {
         CreditCard creditCard = new CreditCard("1234567789", "645", LocalDate.now());
         PaymentsRequest paymentsRequest = new PaymentsRequest(1000L, creditCard);
         PaymentRequestTo paymentsRequestTo = paymentsMapper.toPaymentRequestTo(paymentsRequest);
-        //PaymentTo paymentTo = paymentsService.addPaymentRequest(paymentsRequestTo).getBody();
-        //return paymentsMapper.toPayment(paymentTo);
 
-        try {
+
+
+        /*PaymentTo paymentTo = payments.process(paymentsRequestTo).getBody();
+        return paymentsMapper.toPayment(paymentTo);*/
+
+
+       try {
             URI uri = new URI(RESOURCE_URI);
             ResponseEntity<PaymentTo> paymentTo = restTemplate.postForEntity(uri, paymentsRequestTo, PaymentTo.class);
             return paymentsMapper.toPayment(paymentTo.getBody());
